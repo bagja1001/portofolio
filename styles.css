@@ -1,0 +1,117 @@
+body {
+  font-size: 16px;
+}
+/*hp*/
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+/* Untuk memastikan font size menyesuaikan dengan ukuran layar */
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Profile Section */
+  #profile {
+    flex-direction: column; /* Mengubah profil menjadi kolom pada perangkat kecil */
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 20px; /* Menambahkan margin pada gambar di perangkat kecil */
+  }
+
+  /* Navigation */
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .space-x-10 {
+    space-x-2; /* Mengurangi space antar link navigasi di perangkat kecil */
+  }
+
+  .text-5xl {
+    font-size: 3rem; /* Menyesuaikan ukuran font */
+  }
+
+  .text-4xl {
+    font-size: 2rem; /* Menyesuaikan ukuran font */
+  }
+
+  .project {
+    width: 100%; /* Membuat project lebih fleksibel */
+    max-width: 100%; /* Memastikan ukuran tetap lebar penuh */
+    min-height: 200px;
+  }
+
+  /* Contact Section */
+  #contact {
+    padding: 20px;
+  }
+
+  form {
+    padding: 10px;
+  }
+}
+.profile-pic {
+  border-radius: 50%;
+  border: 4px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background-color: #007bff;
+  transform: scale(1.15);
+  box-shadow: 4px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.icon i {
+  font-size: 24px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.icon:hover i {
+  color: #fff;
+}
+.projects-container {
+  display: grid;
+  gap: 20px; /* Jarak antara box */
+  justify-content: center;
+}
+
+.project {
+  width: 100%; /* Membuat box penuh dalam grid */
+  max-width: 400px; /* Lebar maksimal */
+  min-height: 200px; /* Tinggi minimal agar box tidak berubah */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
