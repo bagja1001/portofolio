@@ -29,6 +29,7 @@ const Hero = () => {
 
         return () => clearTimeout(timeout);
     }, [text, isDeleting, roleIndex]);
+
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -46,9 +47,13 @@ const Hero = () => {
     };
 
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+        <section
+            id="home"
+            className="relative overflow-hidden px-4 sm:px-6 lg:px-8"
+            style={{ minHeight: '100dvh', display: 'flex', alignItems: 'center', paddingTop: '5rem', paddingBottom: '2rem' }}
+        >
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
                     className="absolute top-20 left-10 w-72 h-72 bg-purple-600/25 rounded-full blur-3xl"
                     animate={{
@@ -89,7 +94,7 @@ const Hero = () => {
             </div>
 
             {/* Main Content - Two Column Layout */}
-            <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 py-20">
+            <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
 
                 {/* Left Side - Text Content */}
                 <motion.div
@@ -99,8 +104,8 @@ const Hero = () => {
                     animate="show"
                 >
                     {/* Greeting */}
-                    <motion.div variants={item} className="mb-4">
-                        <span className="inline-block px-6 py-2 glass rounded-full text-sm font-medium">
+                    <motion.div variants={item} className="mb-3 sm:mb-4">
+                        <span className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 glass rounded-full text-xs sm:text-sm font-medium">
                             👋 Welcome to my portfolio
                         </span>
                     </motion.div>
@@ -108,15 +113,15 @@ const Hero = () => {
                     {/* Name */}
                     <motion.h1
                         variants={item}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+                        className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-6 leading-tight"
                     >
                         Hi, I'm{' '}
                         <span className="gradient-text">Mifta Subagja</span>
                     </motion.h1>
 
                     {/* Role - Typewriter Animation */}
-                    <motion.div variants={item} className="mb-6">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">
+                    <motion.div variants={item} className="mb-4 sm:mb-6">
+                        <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold">
                             <span
                                 className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
                                 style={{
@@ -126,14 +131,14 @@ const Hero = () => {
                             >
                                 {text}
                             </span>
-                            <span className="inline-block w-[3px] h-[1em] bg-purple-400 ml-1 animate-pulse align-middle" />
+                            <span className="inline-block w-[2px] sm:w-[3px] h-[1em] bg-purple-400 ml-1 animate-pulse align-middle" />
                         </h2>
                     </motion.div>
 
                     {/* Description */}
                     <motion.p
                         variants={item}
-                        className="text-base md:text-lg text-white/70 max-w-xl mx-auto lg:mx-0 mb-10"
+                        className="text-xs sm:text-base md:text-lg text-white/70 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-10"
                     >
                         I craft beautiful, functional, and user-centric digital experiences.
                         Passionate about turning ideas into reality with clean code and
@@ -143,10 +148,10 @@ const Hero = () => {
                     {/* CTA Buttons */}
                     <motion.div
                         variants={item}
-                        className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start mb-10"
+                        className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-10"
                     >
                         <motion.button
-                            className="btn-primary flex items-center gap-2 text-sm sm:text-base"
+                            className="btn-primary flex items-center gap-2 text-xs sm:text-base"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
@@ -156,7 +161,7 @@ const Hero = () => {
                         <motion.a
                             href="/cv.pdf"
                             download
-                            className="px-6 sm:px-8 py-3 rounded-full glass hover:bg-white/15 transition-all duration-300 font-semibold flex items-center gap-2 text-sm sm:text-base"
+                            className="px-5 sm:px-8 py-2.5 sm:py-3 rounded-full glass hover:bg-white/15 transition-all duration-300 font-semibold flex items-center gap-2 text-xs sm:text-base"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -167,7 +172,7 @@ const Hero = () => {
                     {/* Social Links */}
                     <motion.div
                         variants={item}
-                        className="flex gap-5 justify-center lg:justify-start"
+                        className="flex gap-4 sm:gap-5 justify-center lg:justify-start"
                     >
                         {[
                             { icon: FaGithub, href: 'https://github.com/bagja1001', label: 'GitHub' },
@@ -179,12 +184,12 @@ const Hero = () => {
                                 href={href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+                                className="w-10 h-10 sm:w-12 sm:h-12 glass rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
                                 whileHover={{ scale: 1.2, rotate: 5 }}
                                 whileTap={{ scale: 0.9 }}
                                 aria-label={label}
                             >
-                                <Icon className="text-xl" />
+                                <Icon className="text-lg sm:text-xl" />
                             </motion.a>
                         ))}
                     </motion.div>
@@ -198,23 +203,22 @@ const Hero = () => {
                     transition={{ delay: 0.5, duration: 0.8 }}
                 >
                     {/* Glow behind */}
-                    <div className="absolute inset-0 bg-purple-900/40 blur-3xl scale-125 rounded-full" />
+                    <div className="absolute inset-0 bg-purple-900/30 blur-[80px] scale-150 rounded-full" />
 
                     {/* Profile Image */}
-                    <div className="relative w-64 sm:w-72 lg:w-80 mx-auto">
+                    <div className="relative w-40 sm:w-56 md:w-72 lg:w-80 mx-auto">
                         <img
                             src={profileImg}
                             alt="Profile"
                             className="w-full h-auto object-contain relative z-10"
                             style={{
-                                maskImage: 'radial-gradient(ellipse 55% 65% at center 40%, black 20%, transparent 70%)',
-                                WebkitMaskImage: 'radial-gradient(ellipse 55% 65% at center 40%, black 20%, transparent 70%)',
+                                maskImage: 'radial-gradient(ellipse 70% 75% at center 40%, black 30%, transparent 70%)',
+                                WebkitMaskImage: 'radial-gradient(ellipse 70% 75% at center 40%, black 30%, transparent 70%)',
                             }}
                         />
                     </div>
                 </motion.div>
             </div>
-
         </section>
     );
 };
